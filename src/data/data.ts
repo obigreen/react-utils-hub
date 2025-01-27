@@ -1,7 +1,7 @@
-import Picture1 from "../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp";
-import Picture2 from "../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp";
+import Picture1 from "../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp";
+import Picture2 from "../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp";
 import Picture3
-    from "../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp";
+    from "../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp";
 
 export type AdidasItem = {
     id: number

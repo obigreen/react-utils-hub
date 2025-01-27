@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Adidas = () => {
     return (
-        <div style={{padding: '20px'}}>
+        <div>
             <h2>ADIDAS</h2>
             <div>
                 <h3>SUPER SUPERSKI</h3>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import {crossArr} from "./data";
+import {crossArr} from "../data/data";
 
 
 export const Model = () => {
@@ -17,7 +17,7 @@ export const Model = () => {
 
 
     return (
-        <div style={{textAlign: "start", padding: '20px'}}>
+        <div>
             {currentModal
                 ?
                 <>

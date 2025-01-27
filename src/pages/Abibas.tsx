@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Abibas = () => {
     return (
-        <div style={{padding: '20px'}}>
+        <div>
             <h2>ABIBAS</h2>
             <div>
                 <h3>SUPERMEGAFOAM TRK</h3>

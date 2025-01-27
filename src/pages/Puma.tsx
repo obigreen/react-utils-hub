@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Puma = () => {
     return (
-        <div style={{padding: '20px'}}>
+        <div>
             <h2>PUMA</h2>
             <div>
                 <h3>ULTRAHYPE 3000</h3>

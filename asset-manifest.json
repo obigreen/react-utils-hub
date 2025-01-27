@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-utils-hub/static/css/main.0ef09d1e.css",
+    "main.js": "/react-utils-hub/static/js/main.544d4c12.js",
+    "static/js/453.bf144bb9.chunk.js": "/react-utils-hub/static/js/453.bf144bb9.chunk.js",
+    "static/media/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp": "/react-utils-hub/static/media/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.4c2aceb4853292b5eab9.webp",
+    "static/media/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp": "/react-utils-hub/static/media/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.b43badfb5bc18129337b.webp",
+    "static/media/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp": "/react-utils-hub/static/media/Superstar_XLG_Shoes_Black_IG9777_01_standard.bfcb34a2e48044d7f26f.webp",
+    "index.html": "/react-utils-hub/index.html",
+    "main.0ef09d1e.css.map": "/react-utils-hub/static/css/main.0ef09d1e.css.map",
+    "main.544d4c12.js.map": "/react-utils-hub/static/js/main.544d4c12.js.map",
+    "453.bf144bb9.chunk.js.map": "/react-utils-hub/static/js/453.bf144bb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ef09d1e.css",
+    "static/js/main.544d4c12.js"
+  ]
+}

@@ -19,7 +19,6 @@ const NavWrapper = styled.div`
         text-decoration: none;
         color: red;
     }
-    
 `
 
 

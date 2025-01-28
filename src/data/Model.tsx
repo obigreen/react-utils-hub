@@ -1,8 +1,10 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import {crossArr} from "../data/data";
+import {crossArr} from "./data";
 
 
+//Отрисовываем тут data.ts
+//Добавить логику потом в каждую страницу с несколькими элементы одной категории, к примеру несколько counters
 export const Model = () => {
 
 
@@ -21,11 +23,10 @@ export const Model = () => {
             {currentModal
                 ?
                 <>
-                    <h2>{currentModal.model}</h2>
-                    <h3>{currentModal.collection}</h3>
-                    <h4>{currentModal.price}</h4>
+                    <h2>{currentModal.title}</h2>
+                    <h3>{currentModal.description}</h3>
                     <img style={{maxWidth: '300px'}} src={currentModal.picture}
-                         alt={currentModal.model}/>
+                         alt={currentModal.title}/>
                 </>
                 : <h2>Нет маны</h2>
 

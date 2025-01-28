@@ -15,10 +15,10 @@ export const Header = () => {
                 <S.Logo>React utils hub</S.Logo>
             </S.LogoWrapper>
             <S.NavWrapper>
-                <NavLink to={PATH.PAGE1}>Counter</NavLink>
+                <NavLink to={PATH.PAGE1}>Counter [it-incubator]</NavLink>
             </S.NavWrapper>
             <S.NavWrapper>
-                <NavLink to={PATH.PAGE2}>Order tickets</NavLink>
+                <NavLink to={PATH.PAGE2}>Order tickets [it-incubator]</NavLink>
             </S.NavWrapper>
         </S.HeaderWrapper>
     );

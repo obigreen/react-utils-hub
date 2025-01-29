@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type PropsType = {
-    changeColor: boolean;
+    changeColor?: boolean;
 }
 
 const Wrapper = styled.div`
@@ -24,8 +24,9 @@ const Board = styled.div`
     background-color: #26282c;
 `
 
-const Num = styled.div.withConfig(// Используем метод withConfig, чтобы настроить обработку пропсов
-    {shouldForwardProp: // shouldForwardProp — функция, которая определяет, какие пропсы НЕ должны передаваться в итоговый DOM-элемент
+const Coun = styled.div.withConfig(// Используем метод withConfig, чтобы настроить обработку пропсов
+    {
+        shouldForwardProp: // shouldForwardProp — функция, которая определяет, какие пропсы НЕ должны передаваться в итоговый DOM-элемент
             (prop) => prop !== 'changeColor',// Указываем, что пропс changeColor не передаётся в DOM
     })<PropsType>`
     font-weight: bold;
@@ -44,6 +45,40 @@ const Num = styled.div.withConfig(// Используем метод withConfig,
 
 `;
 
+const BoardWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+`
+
+const ValWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 99%;
+`
+
+
+const ValTitle = styled.h2`
+    margin-left: 10px;
+    color: white;
+`
+
+
+const Val = styled.input`
+    display: block;
+    max-width: 75px;
+    font-weight: bold;
+    font-size: 35px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #28a100;
+    padding-left: 16px;
+`
+
 
 const Buttons = styled.div`
     width: 100%;
@@ -59,9 +94,10 @@ const Button = styled.button`
     border: 1px solid black;
     border-radius: 12px;
     cursor: pointer;
+
 `
 
 
 export const S = {
-    Wrapper, Board, Num, Buttons, Button
+    Wrapper, Board, Coun, Buttons, Button, Val, BoardWrapper, ValWrapper, ValTitle
 }

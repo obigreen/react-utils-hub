@@ -18,17 +18,40 @@ import {S} from "./Counter_Styles"
 
 export const Counter = () => {
 
-    let [maxValue, setMaxValue] = useState(10);
+    let [maxValue, setMaxValue] = useState<number>(0);
     let [minValue, setMinValue] = useState(0);
-    let [count, setCount] = useState(minValue)
+    let [count, setCount] = useState<number>(minValue)
+    let [error, setError] = useState<string>('');
 
 
     const updateMaxState = (e: ChangeEvent<HTMLInputElement>) => {
-        setMaxValue(Number(e.currentTarget.value))
+        const newMax = Number(e.currentTarget.value)
+        setMaxValue(newMax)
+
+        if (minValue >= maxValue || maxValue > 10) {
+            setError("Invalid value")
+        } else {
+            setError("push set")
+        }
+
+
     }
 
     const updateMinState = (e: ChangeEvent<HTMLInputElement>) => {
-        setMinValue(Number(e.currentTarget.value))
+        const newMin = Number(e.currentTarget.value)
+        setMinValue(newMin)
+
+        if (minValue >= maxValue || minValue < 0) {
+            setError("Invalid value")
+        } else {
+            setError("push set")
+        }
+
+    }
+
+
+    const validateFunc = () => {
+        setCount(count)
     }
 
 
@@ -37,10 +60,9 @@ export const Counter = () => {
     }
 
 
-
     const reset = () => {
         if (count > 0) {
-            setCount(0)
+            setCount(minValue)
         }
     }
 
@@ -53,9 +75,8 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Max value :</S.ValTitle>
                             <S.Val
+                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={maxValue}
-                                max={maxValue}
-                                min={minValue}
                                 onChange={updateMaxState}
                                 type={"number"}>
 
@@ -64,9 +85,8 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Min value :</S.ValTitle>
                             <S.Val
+                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={minValue}
-                                max={maxValue}
-                                min={minValue}
                                 onChange={updateMinState}
                                 type={"number"}>
 
@@ -75,13 +95,13 @@ export const Counter = () => {
                     </S.BoardWrapper>
                 </S.Board>
                 <S.Buttons>
-                    <S.Button>set</S.Button>
+                    <S.Button onClick={validateFunc}>set</S.Button>
                 </S.Buttons>
             </S.Wrapper>
 
             <S.Wrapper>
                 <S.Board>
-                    <S.Coun changeColor={maxValue === count}>{count}</S.Coun>
+                    <S.Coun changeColor={maxValue === count}>{error !== " " ? error : count}</S.Coun>
                 </S.Board>
                 <S.Buttons>
                     <S.Button disabled={count >= maxValue} onClick={counter}>count</S.Button>

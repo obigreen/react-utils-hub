@@ -18,52 +18,52 @@ import {S} from "./Counter_Styles"
 
 export const Counter = () => {
 
+
     let [maxValue, setMaxValue] = useState<number>(0);
     let [minValue, setMinValue] = useState(0);
-    let [count, setCount] = useState<number>(minValue)
-    let [error, setError] = useState<string>('');
+    let [count, setCount] = useState<number | string>("push set")
+    let [error, setError] = useState('');
+
+    const validateValue = (newMin: number, newMax: number) => {
+        if (newMax <= newMin || newMin < 0) {
+            setError("error")
+            setCount("error")
+        } else {
+            setError("")
+            setCount("push set")
+        }
+    }
 
 
     const updateMaxState = (e: ChangeEvent<HTMLInputElement>) => {
         const newMax = Number(e.currentTarget.value)
         setMaxValue(newMax)
-
-        if (minValue >= maxValue || maxValue > 10) {
-            setError("Invalid value")
-        } else {
-            setError("push set")
-        }
-
-
+        validateValue(minValue, newMax)
     }
 
     const updateMinState = (e: ChangeEvent<HTMLInputElement>) => {
         const newMin = Number(e.currentTarget.value)
         setMinValue(newMin)
-
-        if (minValue >= maxValue || minValue < 0) {
-            setError("Invalid value")
-        } else {
-            setError("push set")
-        }
-
+        validateValue(newMin, maxValue)
     }
 
 
     const validateFunc = () => {
-        setCount(count)
+        if (!error) {
+            setCount(minValue)
+        }
     }
 
 
     const counter = () => {
-        setCount((prevCount) => prevCount + 1)//callback с актуальным состоянием + 1
+        if (typeof count === "number" && count <= minValue) {
+            setCount((prevCount) => (typeof prevCount === "number" ? prevCount + 1 : minValue))
+        }
     }
 
 
     const reset = () => {
-        if (count > 0) {
-            setCount(minValue)
-        }
+        setCount(minValue)
     }
 
 
@@ -75,7 +75,7 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Max value :</S.ValTitle>
                             <S.Val
-                                style={!!error ? {borderColor: 'red'} : {borderColor: 'white'}}
+                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={maxValue}
                                 onChange={updateMaxState}
                                 type={"number"}>
@@ -85,7 +85,7 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Min value :</S.ValTitle>
                             <S.Val
-                                style={!!error ? {borderColor: 'red'} : {borderColor: 'white'}}
+                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={minValue}
                                 onChange={updateMinState}
                                 type={"number"}>
@@ -95,17 +95,20 @@ export const Counter = () => {
                     </S.BoardWrapper>
                 </S.Board>
                 <S.Buttons>
-                    <S.Button onClick={validateFunc}>set</S.Button>
+                    <S.Button disabled={!!error} onClick={validateFunc}>set</S.Button>
                 </S.Buttons>
             </S.Wrapper>
 
             <S.Wrapper>
                 <S.Board>
-                    <S.Coun changeColor={maxValue === count}>{count}</S.Coun>
+                    <S.Coun changeColor={count === maxValue}>
+                        {/*{error ? <span style={{color: "red"}}>{error}</span> : count}*/}
+                        {typeof count === "string" ? <span style={{ color: 'red' }}>{count}</span> : count}
+                    </S.Coun>
                 </S.Board>
                 <S.Buttons>
-                    <S.Button disabled={count >= maxValue} onClick={counter}>count</S.Button>
-                    <S.Button disabled={count === 0} onClick={reset}>reset</S.Button>
+                    <S.Button disabled={typeof count !== "number" || count >= maxValue} onClick={counter}>count</S.Button>
+                    <S.Button disabled={typeof count !== "number" || count === 0} onClick={reset}>reset</S.Button>
                 </S.Buttons>
             </S.Wrapper>
         </>

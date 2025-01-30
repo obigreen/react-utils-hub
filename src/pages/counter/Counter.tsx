@@ -75,7 +75,7 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Max value :</S.ValTitle>
                             <S.Val
-                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
+                                style={!!error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={maxValue}
                                 onChange={updateMaxState}
                                 type={"number"}>
@@ -85,7 +85,7 @@ export const Counter = () => {
                         <S.ValWrapper>
                             <S.ValTitle>Min value :</S.ValTitle>
                             <S.Val
-                                style={error ? {borderColor: 'red'} : {borderColor: 'white'}}
+                                style={!!error ? {borderColor: 'red'} : {borderColor: 'white'}}
                                 value={minValue}
                                 onChange={updateMinState}
                                 type={"number"}>
@@ -101,7 +101,7 @@ export const Counter = () => {
 
             <S.Wrapper>
                 <S.Board>
-                    <S.Coun changeColor={maxValue === count}>{error !== " " ? error : count}</S.Coun>
+                    <S.Coun changeColor={maxValue === count}>{count}</S.Coun>
                 </S.Board>
                 <S.Buttons>
                     <S.Button disabled={count >= maxValue} onClick={counter}>count</S.Button>

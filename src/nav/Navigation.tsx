@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {S} from "./Navigation_Styles"
 
 export const Navigation = () => {

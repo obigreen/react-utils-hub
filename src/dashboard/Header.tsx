@@ -4,8 +4,9 @@ import {S} from "./Dashboard_Styles"
 
 
 export const PATH = {
-    PAGE1: "/COUNTER",
-    PAGE2: "/ORDERTICKETS",
+    PAGE1: "/start",
+    PAGE2: "/counter",
+    PAGE3: "/ordertickets",
 } as const
 
 export const Header = () => {
@@ -15,10 +16,13 @@ export const Header = () => {
                 <S.Logo>React utils hub</S.Logo>
             </S.LogoWrapper>
             <S.NavWrapper>
-                <NavLink to={PATH.PAGE1}>Counter [it-incubator]</NavLink>
+                <NavLink to={PATH.PAGE1}>Start page</NavLink>
             </S.NavWrapper>
             <S.NavWrapper>
-                <NavLink to={PATH.PAGE2}>Order tickets [it-incubator]</NavLink>
+                <NavLink to={PATH.PAGE2}>Counter [it-incubator]</NavLink>
+            </S.NavWrapper>
+            <S.NavWrapper>
+                <NavLink to={PATH.PAGE3}>Order tickets [it-incubator]</NavLink>
             </S.NavWrapper>
         </S.HeaderWrapper>
     );

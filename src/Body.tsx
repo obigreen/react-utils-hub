@@ -16,10 +16,10 @@ export const Body = () => {
                 <Navigation/>
                 <RouteWrapper>
                     <Routes>
-                        <Route path={"/"} element={<Navigate to={"/start"}/>}/>
-                        <Route path={"/start"} element={<StartPage/>}/>
-                        <Route path={"/counter"} element={<Counter/>}/>
-                        <Route path={"/ordertickets"} element={<OrderTickets/>}/>
+                        <Route path={"/"} element={<Navigate to={"start"}/>}/>
+                        <Route path={"start"} element={<StartPage/>}/>
+                        <Route path={"counter"} element={<Counter/>}/>
+                        <Route path={"ordertickets"} element={<OrderTickets/>}/>
                         {/*<Route path={"*"} element={<Navigate to={"/Error404"}/>}/>*/}
                         <Route path={"*"} element={<Error404/>}/>
                         {/*<Route path={"/:id"} element={<Model/>}/>*/}

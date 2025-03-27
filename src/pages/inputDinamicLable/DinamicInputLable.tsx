@@ -26,11 +26,6 @@ const InputWrapper = styled.div`
         transition: all 0.3s;
     }
 
-    input:focus {
-        outline: none;
-        border: 1px solid #02350d;
-    }
-
     label {
         position: absolute;
         top: 49%;
@@ -42,10 +37,20 @@ const InputWrapper = styled.div`
         transition: all 0.3s;
     }
 
+    input:focus {
+        outline: none;
+        border: 1px solid #2e7101;
+    }
+    
     input:focus + label,
-    input:not(:placeholder-shown) + label {
+    input:valid + label {
         font-size: 16px;
         top: 0;
         background-color: white;
+        color: #2e7101;
+    }
+
+    input:valid {
+        border: 1px solid #2e7101;
     }
 `

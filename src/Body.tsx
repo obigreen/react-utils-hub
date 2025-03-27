@@ -7,6 +7,7 @@ import {Navigation} from "./nav/Navigation";
 import styled from "styled-components";
 import {OrderTickets} from "./pages/order-tickets/OrderTickets";
 import {StartPage} from "./pages/StartPage";
+import {DinamicInputLable} from "./pages/inputDinamicLable/DinamicInputLable";
 
 
 export const Body = () => {
@@ -20,6 +21,7 @@ export const Body = () => {
                         <Route path={"start"} element={<StartPage/>}/>
                         <Route path={"counter"} element={<Counter/>}/>
                         <Route path={"ordertickets"} element={<OrderTickets/>}/>
+                        <Route path={"dinamicInputLable"} element={<DinamicInputLable/>}/>
                         {/*<Route path={"*"} element={<Navigate to={"/Error404"}/>}/>*/}
                         <Route path={"*"} element={<Error404/>}/>
                         {/*<Route path={"/:id"} element={<Model/>}/>*/}

@@ -7,6 +7,7 @@ export const PATH = {
     PAGE1: "/start",
     PAGE2: "/counter",
     PAGE3: "/ordertickets",
+    PAGE4: "/dinamicInputLable",
 } as const
 
 export const Header = () => {
@@ -23,6 +24,9 @@ export const Header = () => {
             </S.NavWrapper>
             <S.NavWrapper>
                 <NavLink to={PATH.PAGE3}>Order tickets [it-incubator]</NavLink>
+            </S.NavWrapper>
+            <S.NavWrapper>
+                <NavLink to={PATH.PAGE4}>Dinamic Lable Input</NavLink>
             </S.NavWrapper>
         </S.HeaderWrapper>
     );

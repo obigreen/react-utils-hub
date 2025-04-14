@@ -98,7 +98,7 @@ export const Counter = () => {
             <S.Wrapper>
                 <S.Board>
                     <S.Coun>
-
+                        {count}
                     </S.Coun>
                 </S.Board>
                 <S.Buttons>
